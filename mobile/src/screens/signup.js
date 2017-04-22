@@ -6,7 +6,9 @@ import {
   View,
   Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native'
 
 const background = require("../assets/login_bg.jpg");
@@ -18,6 +20,8 @@ const birthdayIcon = require("../assets/signup_birthday.png");
 export default class Signup extends Component {
   render() {
     return (
+      <TouchableWithoutFeedback
+        onPress = {() => Keyboard.dismiss()}>
       <View style={styles.container}>
         <Image
           source={background}
@@ -110,7 +114,8 @@ export default class Signup extends Component {
 
           <View style={styles.footerContainer}>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>  this.props.navigation.navigate("Tabs")}>
               <View style={styles.signup}>
                 <Text style={styles.whiteFont}>Join</Text>
               </View>
@@ -125,6 +130,7 @@ export default class Signup extends Component {
           </View>
         </Image>
       </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
