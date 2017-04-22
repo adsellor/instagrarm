@@ -30,8 +30,10 @@
   },
   "dependencies": {
     "express": "^4.15.2",
+    "material-ui": "^0.17.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-tap-event-plugin": "^2.0.1",
     "styled-components": "^1.4.5"
   },
   "homepage": "https://github.com/DavtyanErik/react-starter#readme"
