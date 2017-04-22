@@ -9,6 +9,8 @@ import { NavigationComponent } from 'react-native-material-bottom-navigation'
 import Main from '../screens/main';
 import Account from '../screens/account'
 import Explore from '../screens/explore'
+import Signup from '../screens/signup';
+import Login from '../screens/login'
 
 
 const Tabs = new TabNavigator({
@@ -68,6 +70,20 @@ const Tabs = new TabNavigator({
 })
 
 export default ScreenStack = new StackNavigator({
+  Signup: {
+    screen: Signup,
+    navigationOptions:  {
+      headerVisible: false
+    }
+  },
+
+  Login:  {
+    screen: Login,
+    navigationOptions:  {
+      headerVisible: false
+    }
+  },
+
   Tabs: {
     screen: Tabs,
     navigationOptions:  {
@@ -85,5 +101,6 @@ export default ScreenStack = new StackNavigator({
         visible: true
       }
     },
-  }
+  },
+
 })
