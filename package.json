@@ -4,7 +4,8 @@
   "description": "Kickstart projects built with react, webpack and sass",
   "scripts": {
     "build": "./node_modules/.bin/webpack",
-    "start": "webpack-dev-server --progress --colors"
+    "start": "webpack-dev-server --progress --colors",
+    "server": "node ./server.js"
   },
   "repository": {
     "type": "git",
