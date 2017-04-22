@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.sass';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import LoginScreen from './components/LoginScreen';
+injectTapEventPlugin();
 
 class App extends React.PureComponent {
   render() {
     return(
-      <div>
-        Hello world
-      </div>
+      <MuiThemeProvider>
+        <LoginScreen />
+      </MuiThemeProvider>
     )
   }
 }
