@@ -8,21 +8,26 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableWithoutFeedback,
-  Keyboard
+  Keyboard,
+  KeyboardAvoidingView,
+  StatusBar
 } from 'react-native'
 
 const background = require("../assets/login_bg.jpg");
 const personIcon = require("../assets/signup_person.png");
 const lockIcon = require("../assets/signup_lock.png");
 const emailIcon = require("../assets/signup_email.png");
-const birthdayIcon = require("../assets/signup_birthday.png");
 
 export default class Signup extends Component {
   render() {
     return (
+
       <TouchableWithoutFeedback
         onPress = {() => Keyboard.dismiss()}>
-      <View style={styles.container}>
+      <View
+        style={styles.container}>
+        <StatusBar
+          hidden={true} />
         <Image
           source={background}
           style={[styles.container, styles.bg]}
@@ -33,7 +38,6 @@ export default class Signup extends Component {
             <View style={styles.headerIconView}>
               <TouchableOpacity style={styles.headerBackButtonView}>
                 <Image
-
                   resizeMode="contain"
                 />
               </TouchableOpacity>
@@ -60,6 +64,8 @@ export default class Signup extends Component {
                 placeholder="Name"
                 placeholderTextColor="#FFF"
                 underlineColorAndroid='transparent'
+                returnKeyType='next'
+                onSubmitEditing={() => this.emailInput.focus()}
               />
             </View>
 
@@ -72,9 +78,14 @@ export default class Signup extends Component {
                 />
               </View>
               <TextInput
+                keyboardType='email-address'
                 style={[styles.input, styles.whiteFont]}
                 placeholder="Email"
                 placeholderTextColor="#FFF"
+                underlineColorAndroid='transparent'
+                returnKeyType='next'
+                onSubmitEditing={() => this.passwordInput.focus()}
+                ref={(input)  => this.emailInput = input}
               />
             </View>
 
@@ -87,37 +98,46 @@ export default class Signup extends Component {
                 />
               </View>
               <TextInput
-                secureTextEntry={true}
+                secureTextEntry
                 style={[styles.input, styles.whiteFont]}
                 placeholder="Password"
                 placeholderTextColor="#FFF"
+                underlineColorAndroid='transparent'
+                returnKeyType='next'
+                onSubmitEditing={() => this.passwordSubmitInput.focus()}
+                ref={(input) => this.passwordInput = input }
               />
             </View>
-
             <View style={styles.inputContainer}>
               <View style={styles.iconContainer}>
                 <Image
-                  source={birthdayIcon}
+                  source={lockIcon}
                   style={styles.inputIcon}
                   resizeMode="contain"
                 />
               </View>
               <TextInput
+                ref={(input) => this.passwordSubmitInput = input}
+                secureTextEntry
                 style={[styles.input, styles.whiteFont]}
-                placeholder="Birthday"
+                placeholder="Confirm Password"
                 placeholderTextColor="#FFF"
                 underlineColorAndroid='transparent'
+                returnKeyType='go'
+
               />
             </View>
+
+
 
           </View>
 
           <View style={styles.footerContainer}>
 
             <TouchableOpacity
-              onPress={() =>  this.props.navigation.navigate("Tabs")}>
-              <View style={styles.signup}>
-                <Text style={styles.whiteFont}>Join</Text>
+              onPress={() =>  this.props.navigation.navigate("TabScreen")}>
+              <View style={styles.signup} >
+                <Text style={styles.whiteFont}>Sign Up</Text>
               </View>
             </TouchableOpacity>
 
@@ -179,9 +199,6 @@ let styles = StyleSheet.create({
     paddingVertical: 20,
   },
   inputContainer: {
-    borderWidth: 1,
-    borderBottomColor: '#CCC',
-    borderColor: 'transparent',
     flexDirection: 'row',
     height: 75,
   },

@@ -84,7 +84,7 @@ export default ScreenStack = new StackNavigator({
     }
   },
 
-  Tabs: {
+  TabScreen: {
     screen: Tabs,
     navigationOptions:  {
       title: 'instagrarm',
@@ -97,10 +97,10 @@ export default ScreenStack = new StackNavigator({
         height: 50,
         backgroundColor: '#59ABE3',
       },
+      headerLeft: null,
       footerOptions: {
         visible: true
       }
     },
-  },
-
+  }
 })

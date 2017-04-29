@@ -8,7 +8,10 @@ import {
   Dimensions,
   TextInput,
   Button,
-  TouchableOpacity
+  TouchableOpacity,
+  StatusBar,
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 
 const { width, height } = Dimensions.get("window");
@@ -20,7 +23,11 @@ const personIcon = require("../assets/login1_person.png");
 export default class Login extends Component {
   render() {
     return (
+      <TouchableWithoutFeedback
+        onPress = {() => Keyboard.dismiss()}>
       <View style={styles.container}>
+        <StatusBar
+          hidden={true} />
         <Image source={background} style={styles.background} resizeMode="cover">
 
           <View style={styles.wrapper}>
@@ -29,6 +36,7 @@ export default class Login extends Component {
                 <Image source={personIcon} style={styles.icon} resizeMode="contain" />
               </View>
               <TextInput
+                underlineColorAndroid='transparent'
                 placeholder="Username"
                 placeholderTextColor="#FFF"
                 style={styles.input}
@@ -39,6 +47,7 @@ export default class Login extends Component {
                 <Image source={lockIcon} style={styles.icon} resizeMode="contain" />
               </View>
               <TextInput
+                underlineColorAndroid='transparent'
                 placeholderTextColor="#FFF"
                 placeholder="Password"
                 style={styles.input}
@@ -69,6 +78,7 @@ export default class Login extends Component {
           </View>
         </Image>
       </View>
+    </TouchableWithoutFeedback>
     );
   }
 }
@@ -87,10 +97,8 @@ const styles = StyleSheet.create({
   },
   inputWrap: {
     flexDirection: "row",
-    marginVertical: 10,
-    height: 40,
-    borderBottomWidth: 1,
-    borderBottomColor: "#CCC"
+    height: 75,
+
   },
   iconWrap: {
     paddingHorizontal: 7,
@@ -98,12 +106,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   icon: {
-    height: 20,
-    width: 20,
+    height: 30,
+    width: 30,
   },
   input: {
     flex: 1,
     paddingHorizontal: 10,
+    fontSize: 20,
   },
   button: {
     backgroundColor: "#FF3366",
