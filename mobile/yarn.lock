@@ -2975,6 +2975,12 @@ react-native-material-bottom-navigation@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/react-native-material-bottom-navigation/-/react-native-material-bottom-navigation-0.4.1.tgz#ff4cdb1d9549a46c6750c1ecd443f9537b3f84d0"
 
+react-native-sqlite-storage@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-sqlite-storage/-/react-native-sqlite-storage-3.3.1.tgz#82c2c824faa21959ba6efed5a61ca3c4ab5293dc"
+  dependencies:
+    xcode "0.8.9"
+
 react-native-tab-view@^0.0.59:
   version "0.0.59"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.59.tgz#2cd1d809a5699fcc5d45fa6fc08deb21d3f81fea"
@@ -3885,7 +3891,7 @@ ws@^2.0.3:
     safe-buffer "~5.0.1"
     ultron "~1.1.0"
 
-xcode@^0.8.9:
+xcode@0.8.9, xcode@^0.8.9:
   version "0.8.9"
   resolved "https://registry.yarnpkg.com/xcode/-/xcode-0.8.9.tgz#ec6765f70e9dccccc9f6e9a5b9b4e7e814b4cf35"
   dependencies:

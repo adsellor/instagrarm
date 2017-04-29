@@ -7,6 +7,8 @@ import {
   StatusBar
 } from  'react-native'
 
+import Sql from '../config/database';
+
 export default class Main extends Component {
   render()  {
     return(
@@ -17,6 +19,7 @@ export default class Main extends Component {
         <Text>
           Hello
         </Text>
+        <Sql/>
       </View>
     )
   }
