@@ -119,11 +119,10 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 30,
+    marginTop: 20,
   },
   buttonText: {
     color: "#FFF",
-    fontSize: 18,
   },
   forgotPasswordText: {
     color: "#D8D8D8",

@@ -61,6 +61,8 @@ export default class Signup extends Component {
               </View>
               <TextInput
                 style={[styles.input, styles.whiteFont]}
+                onTextChanged={(text) => this.savedData(text)}
+                value=''
                 placeholder="Name"
                 placeholderTextColor="#FFF"
                 underlineColorAndroid='transparent'
@@ -217,10 +219,10 @@ let styles = StyleSheet.create({
   },
   signup: {
     backgroundColor: '#FF3366',
-    paddingVertical: 25,
+    paddingVertical: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 15,
+    marginBottom: 10,
   },
   signin: {
     justifyContent: 'center',

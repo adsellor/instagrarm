@@ -39,14 +39,14 @@ const Tabs = new TabNavigator({
   }
 },
 {
-  swipeEnabled: false,
-  animationEnabled: false,
+  swipeEnabled: true,
+  animationEnabled: true,
   tabBarComponent: NavigationComponent,
   tabBarPosition: 'bottom',
   tabBarOptions: {
     bottomNavigationOptions: {
-      labelColor: 'black',
-      rippleColor: 'black',
+      labelColor: '#FFF',
+      rippleColor: '#FFF',
       tabs: {
         Home: {
           barBackgroundColor: '#59ABE3',
@@ -86,12 +86,12 @@ export default ScreenStack = new StackNavigator({
 
   TabScreen: {
     screen: Tabs,
+    title: 'instagrarm',
     navigationOptions:  {
-      title: 'instagrarm',
       titleStyle:{
         fontWeight: '200'
       },
-      headerStyle:  {
+        headerStyle:  {
         elevation: 0,
         shadowOpacity: 0,
         height: 50,
