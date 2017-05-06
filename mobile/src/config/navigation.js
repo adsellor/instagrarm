@@ -39,8 +39,8 @@ const Tabs = new TabNavigator({
   }
 },
 {
-  swipeEnabled: true,
-  animationEnabled: true,
+  swipeEnabled: false,
+  animationEnabled: false,
   tabBarComponent: NavigationComponent,
   tabBarPosition: 'bottom',
   tabBarOptions: {
@@ -88,6 +88,7 @@ export default ScreenStack = new StackNavigator({
     screen: Tabs,
     title: 'instagrarm',
     navigationOptions:  {
+      headerVisible: false,
       titleStyle:{
         fontWeight: '200'
       },

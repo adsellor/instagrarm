@@ -7,10 +7,9 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import Header from '../components/customHeader'
 
 const pic = require('../assets/user-icon.png');
-const name = 'Iterate Iteretian'
-const username = 'iterate'
 
 export default class Profile extends Component {
   constructor(props) {
@@ -19,17 +18,20 @@ export default class Profile extends Component {
       followers: 999,
       posts: 0,
       following: 999,
-    };
+      username: 'iterate',
+      name: 'Iterate Iterateian'
+      };
   }
   render() {
 
     return (
      <View>
+       <Header title={this.state.username} color="#DCC6E0"/>
        <ScrollView automaticallyAdjustContentInsets={false} style={styles.scrollView}>
          <View style={styles.infoWrap}>
            <View style={styles.info}>
              <Image source={pic} style={styles.pic}/>
-             <Text style={styles.name}>{name}</Text>
+             <Text style={styles.name}>{this.state.name}</Text>
             </View>
 
           <View style={{flex:1}}>
